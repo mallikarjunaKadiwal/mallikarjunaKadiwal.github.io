@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mallikarjunaKadiwal - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-content">
+                <img id="avatar" class="avatar" alt="Avatar">
+                <h1 id="name"></h1>
+                <p id="bio" class="bio"></p>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-value" id="repos-count">0</span>
+                        <span class="stat-label">Repositories</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="followers-count">0</span>
+                        <span class="stat-label">Followers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="following-count">0</span>
+                        <span class="stat-label">Following</span>
+                    </div>
+                </div>
+                <div class="hero-links">
+                    <a id="github-link" href="#" class="btn btn-primary">View on GitHub</a>
+                    <a id="location" class="btn btn-secondary"></a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Repositories Section -->
+        <section class="repositories">
+            <h2>Featured Repositories</h2>
+            <div id="repos-container" class="repos-grid">
+                <div class="loading">Loading repositories...</div>
+            </div>
+        </section>
+
+        <!-- Languages Section -->
+        <section class="languages">
+            <h2>Languages Used</h2>
+            <div id="languages-container" class="languages-grid">
+                <div class="loading">Analyzing languages...</div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <h2>About</h2>
+            <div id="about-content" class="about-content">
+                <p>Loading profile information...</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 mallikarjunaKadiwal. All rights reserved.</p>
+            <div class="social-links">
+                <a id="social-github" href="#" title="GitHub">GitHub</a>
+                <a id="social-twitter" href="#" title="Twitter">Twitter</a>
+                <a id="social-linkedin" href="#" title="LinkedIn">LinkedIn</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
