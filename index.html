@@ -3,72 +3,528 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mallikarjunaKadiwal - Portfolio</title>
+    <title>Mallikarjuna Kadiwal - Full Stack & DevOps Developer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">MK</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#devops">DevOps/CI-CD</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <!-- Hero Section -->
-        <header class="hero">
+        <section class="hero" id="hero">
             <div class="hero-content">
                 <img id="avatar" class="avatar" alt="Avatar">
-                <h1 id="name"></h1>
-                <p id="bio" class="bio"></p>
-                <div class="stats">
+                <h1 id="name">Mallikarjuna Kadiwal</h1>
+                <p class="title">Full Stack Developer | DevOps Engineer | Cloud Architect</p>
+                <p id="bio" class="bio">Building scalable applications with React, Node.js, and automating deployments with Jenkins & CI/CD pipelines</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">2+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
                     <div class="stat">
                         <span class="stat-value" id="repos-count">0</span>
-                        <span class="stat-label">Repositories</span>
+                        <span class="stat-label">Projects</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-value" id="followers-count">0</span>
-                        <span class="stat-label">Followers</span>
+                        <span class="stat-value">12+</span>
+                        <span class="stat-label">Skills</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-value" id="following-count">0</span>
-                        <span class="stat-label">Following</span>
+                        <span class="stat-value">100%</span>
+                        <span class="stat-label">Committed</span>
                     </div>
                 </div>
-                <div class="hero-links">
-                    <a id="github-link" href="#" class="btn btn-primary">View on GitHub</a>
-                    <a id="location" class="btn btn-secondary"></a>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Get In Touch
+                    </a>
+                    <a href="resume.pdf" download class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                    <a href="#projects" class="btn btn-tertiary">
+                        <i class="fas fa-arrow-down"></i> View My Work
+                    </a>
                 </div>
-            </div>
-        </header>
-
-        <!-- Repositories Section -->
-        <section class="repositories">
-            <h2>Featured Repositories</h2>
-            <div id="repos-container" class="repos-grid">
-                <div class="loading">Loading repositories...</div>
-            </div>
-        </section>
-
-        <!-- Languages Section -->
-        <section class="languages">
-            <h2>Languages Used</h2>
-            <div id="languages-container" class="languages-grid">
-                <div class="loading">Analyzing languages...</div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section class="about">
-            <h2>About</h2>
-            <div id="about-content" class="about-content">
-                <p>Loading profile information...</p>
+        <section class="about" id="about">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Frontend Development</h3>
+                    <p>Expert in building responsive, interactive UIs with React.js, HTML5, CSS3, and Bootstrap. 30% improvement in user engagement.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend Development</h3>
+                    <p>Proficient in Node.js, PHP, Python, Java. Designed RESTful APIs, optimized databases achieving 15% faster response times.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>DevOps & CI/CD</h3>
+                    <p>Automated deployments with Jenkins, GitHub Actions. Infrastructure as Code, containerization with Docker, cloud deployment.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud & Infrastructure</h3>
+                    <p>Experience with AWS, Azure, Netlify. Managed services for scalability and high availability. Reduced downtime by 25%.</p>
+                </div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2026 mallikarjunaKadiwal. All rights reserved.</p>
-            <div class="social-links">
-                <a id="social-github" href="#" title="GitHub">GitHub</a>
-                <a id="social-twitter" href="#" title="Twitter">Twitter</a>
-                <a id="social-linkedin" href="#" title="LinkedIn">LinkedIn</a>
+        <!-- Skills Section -->
+        <section class="skills-section" id="skills">
+            <h2>Skills & Technologies</h2>
+            <div class="skills-grid">
+                <!-- Frontend -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-paint-brush"></i> Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag" style="--color: #f1e05a;">HTML5</span>
+                        <span class="skill-tag" style="--color: #563d7c;">CSS3</span>
+                        <span class="skill-tag" style="--color: #f1e05a;">JavaScript</span>
+                        <span class="skill-tag" style="--color: #61dafb;">React.js</span>
+                        <span class="skill-tag" style="--color: #2b7489;">TypeScript</span>
+                        <span class="skill-tag" style="--color: #ffffff; --text-color: #000;">Bootstrap</span>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag" style="--color: #68a063;">Node.js</span>
+                        <span class="skill-tag" style="--color: #777bb4;">PHP</span>
+                        <span class="skill-tag" style="--color: #3572A5;">Python</span>
+                        <span class="skill-tag" style="--color: #b07219;">Java</span>
+                    </div>
+                </div>
+
+                <!-- Database -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-table"></i> Database</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag" style="--color: #00758F;">MySQL</span>
+                        <span class="skill-tag" style="--color: #13AA52;">MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- DevOps & Tools -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> DevOps & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag" style="--color: #cc0000;">Jenkins</span>
+                        <span class="skill-tag" style="--color: #181717;">GitHub Actions</span>
+                        <span class="skill-tag" style="--color: #2496ED;">Docker</span>
+                        <span class="skill-tag" style="--color: #F7931E;">AWS</span>
+                        <span class="skill-tag" style="--color: #0078D4;">Azure</span>
+                        <span class="skill-tag" style="--color: #00C7FD;">Git</span>
+                    </div>
+                </div>
+
+                <!-- Design & Soft Skills -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-pen-fancy"></i> Design & Soft Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag" style="--color: #F24E1E;">Figma</span>
+                        <span class="skill-tag" style="--color: #FF6B6B;">UI/UX Design</span>
+                        <span class="skill-tag" style="--color: #4CAF50;">Critical Thinking</span>
+                        <span class="skill-tag" style="--color: #9C27B0;">Agile</span>
+                    </div>
+                </div>
             </div>
-        </footer>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience" id="experience">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Full Stack Developer Intern</h3>
+                        <p class="company">Swapnodaya Trust</p>
+                        <p class="duration"><i class="fas fa-calendar"></i> Jul 2024 - Present</p>
+                        <ul class="achievements">
+                            <li>Designed and deployed responsive web applications using React.js, increasing user engagement by 30%</li>
+                            <li>Crafted dynamic Figma UI components improving interactivity</li>
+                            <li>Conducted cross-browser testing, achieving 95% usability across devices</li>
+                            <li>Collaborated with team using Agile methodologies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Backend Developer Intern</h3>
+                        <p class="company">Accurate Info Solutions</p>
+                        <p class="duration"><i class="fas fa-calendar"></i> Oct 2024 - Dec 2024</p>
+                        <ul class="achievements">
+                            <li>Optimized and automated backend workflows improving efficiency by 20%</li>
+                            <li>Designed and implemented RESTful APIs for secure data handling</li>
+                            <li>Reduced system downtime by 25% through troubleshooting</li>
+                            <li>Optimized database queries, improving response times by 15%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Full Stack Developer Intern</h3>
+                        <p class="company">Swapnodaya Trust</p>
+                        <p class="duration"><i class="fas fa-calendar"></i> Dec 2021 - Present</p>
+                        <ul class="achievements">
+                            <li>Full stack development using React.js and Node.js</li>
+                            <li>Database design and optimization</li>
+                            <li>Responsive web design and cross-browser compatibility</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1: Code-Sync -->
+                <div class="project-card">
+                    <div class="project-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="project-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Real-Time Collaborative Code Editor (Code-Sync)</h3>
+                        <p>High-performance collaborative code editor with WebSockets and OT/CRDT algorithms</p>
+                        <div class="project-tech">
+                            <span>React.js</span>
+                            <span>WebSockets</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">40%</span>
+                                <span class="metric-label">Faster</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Real-time</span>
+                                <span class="metric-label">Sync</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Engineered a high-performance real-time collaborative code editor, reducing processing time by 40%. Features live syntax highlighting, instant version control, and interactive chat.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Student Record Management -->
+                <div class="project-card">
+                    <div class="project-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <div class="project-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Student Record Management System</h3>
+                        <p>Web-based application for managing student records, attendance, and grades</p>
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">30%</span>
+                                <span class="metric-label">Faster</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">100%</span>
+                                <span class="metric-label">Secure</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Developed a web-based application to manage student records with secure data storage, retrieval, and editing. Optimized database for 30% faster queries.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DevOps & CI/CD Section -->
+        <section class="devops" id="devops">
+            <h2>DevOps & CI/CD Pipeline</h2>
+            <div class="devops-intro">
+                <p>Expertise in automating deployments, building robust CI/CD pipelines, and managing cloud infrastructure</p>
+            </div>
+            <div class="devops-grid">
+                <div class="devops-card">
+                    <div class="devops-icon">
+                        <i class="fas fa-jenkins"></i>
+                    </div>
+                    <h3>Jenkins CI/CD</h3>
+                    <p>Automated build, test, and deployment pipelines. Configured jobs with Groovy scripts, integrated notifications, and artifact management.</p>
+                    <div class="devops-features">
+                        <span><i class="fas fa-check"></i> Declarative Pipelines</span>
+                        <span><i class="fas fa-check"></i> Automated Testing</span>
+                        <span><i class="fas fa-check"></i> Artifact Repository</span>
+                    </div>
+                </div>
+
+                <div class="devops-card">
+                    <div class="devops-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub Actions</h3>
+                    <p>Set up GitHub Actions workflows for linting, testing, build, and release. Automated version tagging and deployments.</p>
+                    <div class="devops-features">
+                        <span><i class="fas fa-check"></i> Workflow Automation</span>
+                        <span><i class="fas fa-check"></i> Artifact Management</span>
+                        <span><i class="fas fa-check"></i> Deployment Automation</span>
+                    </div>
+                </div>
+
+                <div class="devops-card">
+                    <div class="devops-icon">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <h3>Docker & Containerization</h3>
+                    <p>Containerized applications for consistent development and production environments. Optimized Docker images for faster deployments.</p>
+                    <div class="devops-features">
+                        <span><i class="fas fa-check"></i> Dockerfile Optimization</span>
+                        <span><i class="fas fa-check"></i> Multi-stage Builds</span>
+                        <span><i class="fas fa-check"></i> Registry Management</span>
+                    </div>
+                </div>
+
+                <div class="devops-card">
+                    <div class="devops-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3>AWS Deployment</h3>
+                    <p>Deployed applications on AWS using EC2, RDS, S3, and CloudFront. Managed scalability and high availability.</p>
+                    <div class="devops-features">
+                        <span><i class="fas fa-check"></i> EC2 Instances</span>
+                        <span><i class="fas fa-check"></i> RDS Databases</span>
+                        <span><i class="fas fa-check"></i> S3 & CloudFront</span>
+                    </div>
+                </div>
+
+                <div class="devops-card">
+                    <div class="devops-icon">
+                        <i class="fab fa-azure"></i>
+                    </div>
+                    <h3>Azure Cloud</h3>
+                    <p>Experience with Azure App Services, Azure DevOps, and infrastructure as code with Terraform.</p>
+                    <div class="devops-features">
+                        <span><i class="fas fa-check"></i> App Services</span>
+                        <span><i class="fas fa-check"></i> Azure DevOps</span>
+                        <span><i class="fas fa-check"></i> Infrastructure as Code</span>
+                    </div>
+                </div>
+
+                <div class="devops-card">
+                    <div class="devops-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>Version Control & Git</h3>
+                    <p>Expert in Git workflows, branching strategies, and collaboration. Managing repositories and pull requests efficiently.</p>
+                    <div class="devops-features">
+                        <span><i class="fas fa-check"></i> Git Workflows</span>
+                        <span><i class="fas fa-check"></i> Branch Strategies</span>
+                        <span><i class="fas fa-check"></i> PR Management</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CI/CD Pipeline Diagram -->
+            <div class="pipeline-diagram">
+                <h3>Typical CI/CD Pipeline</h3>
+                <div class="pipeline-flow">
+                    <div class="pipeline-stage">
+                        <i class="fas fa-code-branch"></i>
+                        <p>Code Push</p>
+                    </div>
+                    <div class="pipeline-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="pipeline-stage">
+                        <i class="fab fa-github"></i>
+                        <p>Trigger Build</p>
+                    </div>
+                    <div class="pipeline-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="pipeline-stage">
+                        <i class="fas fa-flask-vial"></i>
+                        <p>Test</p>
+                    </div>
+                    <div class="pipeline-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="pipeline-stage">
+                        <i class="fab fa-docker"></i>
+                        <p>Build Image</p>
+                    </div>
+                    <div class="pipeline-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="pipeline-stage">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Deploy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="certifications" id="certifications">
+            <h2>Certifications & Education</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Bachelor of Engineering</h3>
+                    <p class="cert-issuer">East West Institute Of Technology</p>
+                    <p class="cert-detail">Information Science & Engineering</p>
+                    <p class="cert-detail"><strong>CGPA: 8.33</strong></p>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3>Career Essentials in Software Development</h3>
+                    <p class="cert-issuer">Microsoft</p>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python for Data Science</h3>
+                    <p class="cert-issuer">IBM</p>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>SQL Basics & Intermediate</h3>
+                    <p class="cert-issuer">United Latino Students Association</p>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python Basics</h3>
+                    <p class="cert-issuer">United Latino Students Association</p>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Project Completion</h3>
+                    <p class="cert-issuer">Skill India</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:mallikarjunakadiwal86@gmail.com">mallikarjunakadiwal86@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+916361771566">+91-6361771566</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Bengaluru, India</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links-contact">
+                    <a href="https://github.com/mallikarjunaKadiwal" title="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/mallikarjunakadiwal" title="LinkedIn" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.hackerrank.com" title="HackerRank" target="_blank">
+                        <i class="fab fa-hackerrank"></i>
+                    </a>
+                    <a href="https://leetcode.com" title="LeetCode" target="_blank">
+                        <i class="fas fa-code"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Mallikarjuna Kadiwal. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#hero">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#devops">DevOps</a>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
