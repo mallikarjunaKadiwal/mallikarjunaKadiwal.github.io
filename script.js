@@ -26,6 +26,7 @@ async function fetchRepositoriesCount() {
         document.getElementById('repos-count').textContent = data.public_repos;
     } catch (error) {
         console.error('Error:', error);
+        document.getElementById('repos-count').textContent = '5+';
     }
 }
 
@@ -55,7 +56,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.about-card, .skill-category, .devops-card, .cert-card').forEach(el => {
+document.querySelectorAll('.about-card, .skill-category, .devops-card, .cert-card, .project-card').forEach(el => {
     observer.observe(el);
 });
 
@@ -84,7 +85,7 @@ const statsObserver = new IntersectionObserver((entries) => {
             statValues.forEach(stat => {
                 if (stat.textContent !== '0' && stat.textContent !== '100%' && !stat.dataset.animated) {
                     const targetText = stat.textContent.replace(/[^0-9]/g, '');
-                    if (targetText) {
+                    if (targetText && !isNaN(parseInt(targetText))) {
                         animateCounter(stat, parseInt(targetText));
                         stat.dataset.animated = 'true';
                     }
