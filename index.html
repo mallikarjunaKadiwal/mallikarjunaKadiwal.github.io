@@ -43,12 +43,12 @@
                 </div>
                 <div class="hero-stats">
                     <div class="stat">
-                        <span class="stat-value">1+</span>
-                        <span class="stat-label">Current Role</span>
+                        <span class="stat-value">2+</span>
+                        <span class="stat-label">Years Experience</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-value">5+</span>
-                        <span class="stat-label">Projects</span>
+                        <span class="stat-value" id="repos-count">0</span>
+                        <span class="stat-label">GitHub Repos</span>
                     </div>
                     <div class="stat">
                         <span class="stat-value">15+</span>
@@ -328,80 +328,19 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- Projects Section - Dynamic from GitHub -->
         <section class="projects" id="projects">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1: Code-Sync -->
-                <div class="project-card">
-                    <div class="project-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <div class="project-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <h3>Real-Time Collaborative Code Editor (Code-Sync)</h3>
-                        <p>High-performance collaborative code editor with WebSockets</p>
-                        <div class="project-tech">
-                            <span>React.js</span>
-                            <span>WebSockets</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                        </div>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">40%</span>
-                                <span class="metric-label">Faster</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">Real-time</span>
-                                <span class="metric-label">Sync</span>
-                            </div>
-                        </div>
-                        <p class="project-description">
-                            Engineered a high-performance real-time collaborative code editor with WebSockets and CRDT algorithms. Features live syntax highlighting, instant version control, and interactive chat for seamless remote teamwork.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/mallikarjunaKadiwal" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: Student Record Management -->
-                <div class="project-card">
-                    <div class="project-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <div class="project-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <h3>Student Record Management System</h3>
-                        <p>Enterprise web application for managing student records</p>
-                        <div class="project-tech">
-                            <span>PHP</span>
-                            <span>MySQL</span>
-                            <span>JavaScript</span>
-                            <span>Bootstrap</span>
-                        </div>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">30%</span>
-                                <span class="metric-label">Faster Queries</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">100%</span>
-                                <span class="metric-label">Secure</span>
-                            </div>
-                        </div>
-                        <p class="project-description">
-                            Developed a comprehensive web-based application with secure data storage, retrieval, and editing. Optimized database achieving 30% faster queries with intuitive user interface.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/mallikarjunaKadiwal" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        </div>
-                    </div>
+            <h2>GitHub Repositories</h2>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            </div>
+            <div id="repos-container" class="projects-grid">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading your repositories...</p>
                 </div>
             </div>
         </section>
