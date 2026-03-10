@@ -275,6 +275,70 @@ if (heroSection) {
     statsObserver.observe(heroSection);
 }
 
+function setupResumeDownload() {
+    const resumeBtn = document.querySelector('a[href*="resume"]');
+    
+    if (resumeBtn) {
+        resumeBtn.addEventListener('click', function(e) {
+            // Get the href attribute
+            const fileUrl = this.getAttribute('href');
+            const fileName = this.getAttribute('download') || 'Mallikarjuna_Kadiwal_Resume.pdf';
+            
+            // Check if file exists
+            fetch(fileUrl, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        // File exists, proceed with download
+                        const link = document.createElement('a');
+                        link.href = fileUrl;
+                        link.download = fileName;
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    } else {
+                        // File doesn't exist
+                        showAlert('Resume file not found. Please try again later.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Download error:', error);
+                    showAlert('Error downloading resume. Please try again.');
+                });
+        });
+    }
+}
+
+// Show notification
+function showAlert(message) {
+    const alert = document.createElement('div');
+    alert.className = 'download-alert';
+    alert.textContent = message;
+    alert.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        padding: 16px 24px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+        animation: slideInDown 0.3s ease-out;
+    `;
+    document.body.appendChild(alert);
+    
+    setTimeout(() => {
+        alert.style.animation = 'slideOutUp 0.3s ease-out';
+        setTimeout(() => alert.remove(), 300);
+    }, 3000);
+}
+
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+    setupResumeDownload();
+    fetchAllRepositories();
+});
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     fetchAllRepositories();
