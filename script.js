@@ -171,9 +171,7 @@ function setupFilterButtons() {
     
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active class from all buttons
             filterButtons.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
             btn.classList.add('active');
             
             const filter = btn.getAttribute('data-filter');
@@ -187,6 +185,83 @@ function setupFilterButtons() {
             displayRepositories(filteredRepos);
         });
     });
+}
+
+// Resume Download Handler
+function setupResumeDownload() {
+    const resumeBtn = document.querySelector('a[href*="resume"]');
+    
+    if (resumeBtn) {
+        resumeBtn.addEventListener('click', function(e) {
+            const fileUrl = this.getAttribute('href');
+            const fileName = this.getAttribute('download') || 'Mallikarjuna_Kadiwal_Resume.pdf';
+            
+            // Check if file exists
+            fetch(fileUrl, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        // Trigger download
+                        const link = document.createElement('a');
+                        link.href = fileUrl;
+                        link.download = fileName;
+                        link.style.display = 'none';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        
+                        showAlert('Resume downloaded successfully! 📄', 'success');
+                    } else {
+                        showAlert('Resume file not found. Please contact admin.', 'error');
+                    }
+                })
+                .catch(error => {
+                    console.error('Download error:', error);
+                    // Fallback: allow browser default behavior
+                    showAlert('Opening resume...', 'info');
+                });
+        });
+    }
+}
+
+// Show notification alerts
+function showAlert(message, type = 'info') {
+    const alert = document.createElement('div');
+    alert.className = `download-alert download-alert-${type}`;
+    alert.innerHTML = `
+        <i class="fas fa-check-circle"></i>
+        <span>${message}</span>
+    `;
+    
+    const bgColor = {
+        success: 'linear-gradient(135deg, #28a745 0%, #20c997 100%)',
+        error: 'linear-gradient(135deg, #dc3545 0%, #ff6b6b 100%)',
+        info: 'linear-gradient(135deg, #0366d6 0%, #6f42c1 100%)'
+    };
+    
+    alert.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${bgColor[type]};
+        color: white;
+        padding: 16px 24px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        animation: slideInDown 0.3s ease-out;
+    `;
+    
+    document.body.appendChild(alert);
+    
+    setTimeout(() => {
+        alert.style.animation = 'slideOutUp 0.3s ease-out';
+        setTimeout(() => alert.remove(), 300);
+    }, 3000);
 }
 
 // Hamburger Menu
@@ -205,7 +280,7 @@ if (hamburger) {
     });
 }
 
-// Smooth scroll behavior for navigation links
+// Smooth scroll behavior
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -235,111 +310,8 @@ document.querySelectorAll('.about-card, .skill-category, .devops-card, .cert-car
     observer.observe(el);
 });
 
-// Counter animation for stats
-function animateCounter(element, target, duration = 2000) {
-    if (typeof target !== 'number' || target <= 0) return;
-    
-    const start = 0;
-    const increment = target / (duration / 16);
-    let current = start;
-
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(current);
-        }
-    }, 16);
-}
-
-// Trigger counter animation when stats are visible
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const reposCount = document.getElementById('repos-count');
-            
-            // Repos count will be set when fetched from API
-            if (reposCount && !reposCount.dataset.animated) {
-                reposCount.dataset.animated = 'true';
-            }
-            
-            statsObserver.unobserve(entry.target);
-        }
-    });
-});
-
-const heroSection = document.querySelector('.hero');
-if (heroSection) {
-    statsObserver.observe(heroSection);
-}
-
-function setupResumeDownload() {
-    const resumeBtn = document.querySelector('a[href*="resume"]');
-    
-    if (resumeBtn) {
-        resumeBtn.addEventListener('click', function(e) {
-            // Get the href attribute
-            const fileUrl = this.getAttribute('href');
-            const fileName = this.getAttribute('download') || 'Mallikarjuna_Kadiwal_Resume.pdf';
-            
-            // Check if file exists
-            fetch(fileUrl, { method: 'HEAD' })
-                .then(response => {
-                    if (response.ok) {
-                        // File exists, proceed with download
-                        const link = document.createElement('a');
-                        link.href = fileUrl;
-                        link.download = fileName;
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                    } else {
-                        // File doesn't exist
-                        showAlert('Resume file not found. Please try again later.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Download error:', error);
-                    showAlert('Error downloading resume. Please try again.');
-                });
-        });
-    }
-}
-
-// Show notification
-function showAlert(message) {
-    const alert = document.createElement('div');
-    alert.className = 'download-alert';
-    alert.textContent = message;
-    alert.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        color: white;
-        padding: 16px 24px;
-        border-radius: 8px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        z-index: 9999;
-        animation: slideInDown 0.3s ease-out;
-    `;
-    document.body.appendChild(alert);
-    
-    setTimeout(() => {
-        alert.style.animation = 'slideOutUp 0.3s ease-out';
-        setTimeout(() => alert.remove(), 300);
-    }, 3000);
-}
-
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
     setupResumeDownload();
-    fetchAllRepositories();
-});
-
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
     fetchAllRepositories();
 });
