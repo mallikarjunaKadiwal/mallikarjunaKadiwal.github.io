@@ -13,9 +13,9 @@ A dynamic, fully responsive personal portfolio website showcasing my experience 
 * **Modern UI/UX:** Features smooth CSS animations, hover effects, sticky navigation, and a fully responsive mobile-first design.
 
 ## 🛠️ Tech Stack
-* [cite_start]**Frontend Technologies:** HTML5, CSS3, JavaScript, TypeScript, React js, Bootstrap [cite: 6]
-* [cite_start]**Backend & Databases:** Python, Java, C, MYSQL [cite: 6]
-* [cite_start]**Version Control & Design:** Git, GitHub, Figma [cite: 6]
+* **Frontend Technologies:** HTML5, CSS3, JavaScript, TypeScript, React js, Bootstrap [cite: 6]
+* **Backend & Databases:** Python, Java, C, MYSQL [cite: 6]
+* **Version Control & Design:** Git, GitHub, Figma [cite: 6]
 
 ## 📁 Project Structure
 ```text
@@ -70,8 +70,3 @@ cd mallikarjunakadiwal.github.io
 
 *Designed and developed by Mallikarjuna Kadiwal.* 
 
-```
-
-Is there anything else you'd like to tweak or add to the repository before calling it completely finished?
-
-```
