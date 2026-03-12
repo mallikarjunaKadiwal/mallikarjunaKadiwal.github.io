@@ -13,9 +13,9 @@ A dynamic, fully responsive personal portfolio website showcasing my experience 
 * **Modern UI/UX:** Features smooth CSS animations, hover effects, sticky navigation, and a fully responsive mobile-first design.
 
 ## 🛠️ Tech Stack
-* **Frontend Technologies:** HTML5, CSS3, JavaScript, TypeScript, React js, Bootstrap [cite: 6]
-* **Backend & Databases:** Python, Java, C, MYSQL [cite: 6]
-* **Version Control & Design:** Git, GitHub, Figma [cite: 6]
+* **Frontend Technologies:** HTML5, CSS3, JavaScript, TypeScript, React js, Bootstrap
+* **Backend & Databases:** Python, Java, C, MYSQL
+* **Version Control & Design:** Git, GitHub, Figma
 
 ## 📁 Project Structure
 ```text
