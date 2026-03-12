@@ -1,4 +1,4 @@
-# [cite_start]Mallikarjuna Kadiwal - Personal Portfolio 
+# Mallikarjuna Kadiwal - Personal Portfolio 
 
 A dynamic, fully responsive personal portfolio website showcasing my experience as a Full Stack Developer and DevOps Engineer. The site highlights my technical skills, professional experience, certifications, and dynamically fetches my latest GitHub projects.
 
