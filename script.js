@@ -4,7 +4,6 @@ const GITHUB_API_URL = 'https://api.github.com';
 let allRepos = [];
 let filteredRepos = [];
 
-// Language color mapping
 const LANGUAGE_COLORS = {
     'JavaScript': '#f1e05a',
     'TypeScript': '#2b7489',
@@ -27,7 +26,6 @@ const LANGUAGE_COLORS = {
     'Django': '#0C3C26',
 };
 
-// Categorize repos by technology
 function categorizeRepo(repo) {
     const lang = (repo.language || '').toLowerCase();
     const name = (repo.name || '').toLowerCase();
@@ -46,7 +44,6 @@ function categorizeRepo(repo) {
     return 'all';
 }
 
-// Fetch all repositories
 async function fetchAllRepositories() {
     try {
         const response = await fetch(
@@ -57,7 +54,6 @@ async function fetchAllRepositories() {
         
         allRepos = await response.json();
         
-        // Sort by stars, then by updated date
         allRepos.sort((a, b) => {
             if (b.stargazers_count !== a.stargazers_count) {
                 return b.stargazers_count - a.stargazers_count;
@@ -69,7 +65,6 @@ async function fetchAllRepositories() {
         displayRepositories(filteredRepos);
         setupFilterButtons();
         
-        // Update repos count
         document.getElementById('repos-count').textContent = allRepos.length;
         
     } catch (error) {
@@ -79,7 +74,6 @@ async function fetchAllRepositories() {
     }
 }
 
-// Display repositories
 function displayRepositories(repos) {
     const container = document.getElementById('repos-container');
     
@@ -97,10 +91,9 @@ function displayRepositories(repos) {
             day: 'numeric'
         });
         
-        // Create gradient background
         const gradientColors = {
             'frontend': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            'backend': 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+            'backend': 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)',
             'fullstack': 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
             'all': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
         };
@@ -165,7 +158,6 @@ function displayRepositories(repos) {
     }).join('');
 }
 
-// Setup filter buttons
 function setupFilterButtons() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     
@@ -187,7 +179,6 @@ function setupFilterButtons() {
     });
 }
 
-// Resume Download Handler
 function setupResumeDownload() {
     const resumeBtn = document.querySelector('a[href*="resume"]');
     
@@ -196,11 +187,9 @@ function setupResumeDownload() {
             const fileUrl = this.getAttribute('href');
             const fileName = this.getAttribute('download') || 'Mallikarjuna_Kadiwal_Resume.pdf';
             
-            // Check if file exists
             fetch(fileUrl, { method: 'HEAD' })
                 .then(response => {
                     if (response.ok) {
-                        // Trigger download
                         const link = document.createElement('a');
                         link.href = fileUrl;
                         link.download = fileName;
@@ -216,14 +205,12 @@ function setupResumeDownload() {
                 })
                 .catch(error => {
                     console.error('Download error:', error);
-                    // Fallback: allow browser default behavior
                     showAlert('Opening resume...', 'info');
                 });
         });
     }
 }
 
-// Show notification alerts
 function showAlert(message, type = 'info') {
     const alert = document.createElement('div');
     alert.className = `download-alert download-alert-${type}`;
@@ -264,7 +251,6 @@ function showAlert(message, type = 'info') {
     }, 3000);
 }
 
-// Hamburger Menu
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -280,7 +266,6 @@ if (hamburger) {
     });
 }
 
-// Smooth scroll behavior
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -291,7 +276,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Animation on scroll
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -310,8 +294,35 @@ document.querySelectorAll('.about-card, .skill-category, .devops-card, .cert-car
     observer.observe(el);
 });
 
-// Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
     setupResumeDownload();
     fetchAllRepositories();
+    setupThemeToggle();
 });
+
+function setupThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+    
+    const themeIcon = themeToggle.querySelector('i');
+    
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.body.classList.add('dark-mode');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        if (document.body.classList.contains('dark-mode')) {
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+}

@@ -41,10 +41,6 @@ body {
     padding: 0 20px;
 }
 
-/* ============================================
-   NAVBAR
-   ============================================ */
-
 .navbar {
     position: sticky;
     top: 0;
@@ -115,10 +111,6 @@ body {
     margin: 5px 0;
     transition: var(--transition);
 }
-
-/* ============================================
-   HERO SECTION
-   ============================================ */
 
 .hero {
     position: relative;
@@ -208,14 +200,23 @@ body {
     }
 }
 
-.avatar:hover {
-    animation: avatarPulse 0.6s ease-out;
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 6px solid white;
+    margin-bottom: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    animation: scaleIn 0.6s ease-out;
+    position: relative;
+    z-index: 3;
+    transition: var(--transition);
 }
 
-@keyframes avatarPulse {
-    0% { box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); }
-    50% { box-shadow: 0 20px 80px rgba(255, 255, 255, 0.4); }
-    100% { box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); }
+.avatar:hover {
+    box-shadow: 0 20px 80px rgba(255, 255, 255, 0.4);
+    transform: translateY(-5px);
 }
 
 .hero h1 {
@@ -403,10 +404,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* ============================================
-   ABOUT SECTION
-   ============================================ */
-
 .about {
     margin-bottom: 100px;
     padding: 60px 20px;
@@ -508,10 +505,6 @@ body {
     line-height: 1.8;
 }
 
-/* ============================================
-   SKILLS SECTION
-   ============================================ */
-
 .skills-section {
     margin-bottom: 100px;
     padding: 60px 20px;
@@ -586,7 +579,8 @@ body {
     display: inline-block;
     padding: 8px 16px;
     background-color: var(--color, #f0f0f0);
-    color: var(--text-color, #000);
+    --text-color: #ffffff;
+    color: var(--text-color);
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -598,10 +592,6 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
-
-/* ============================================
-   EXPERIENCE SECTION
-   ============================================ */
 
 .experience {
     margin-bottom: 100px;
@@ -754,10 +744,6 @@ body {
     font-weight: bold;
 }
 
-/* ============================================
-   TECH STACK VISUALIZATION
-   ============================================ */
-
 .tech-stack {
     margin-bottom: 100px;
     padding: 60px 20px;
@@ -882,10 +868,6 @@ body {
     color: var(--text-light);
     max-width: 400px;
 }
-
-/* ============================================
-   PROJECTS SECTION
-   ============================================ */
 
 .projects {
     margin-bottom: 100px;
@@ -1033,10 +1015,6 @@ body {
     box-shadow: 0 10px 30px rgba(3, 102, 214, 0.3);
 }
 
-/* ============================================
-   DEVOPS SECTION
-   ============================================ */
-
 .devops {
     margin-bottom: 100px;
     padding: 60px 20px;
@@ -1171,7 +1149,6 @@ body {
     color: var(--success-color);
 }
 
-/* Pipeline Visualization */
 .pipeline-visualization {
     background: var(--bg-color);
     padding: 40px;
@@ -1245,10 +1222,6 @@ body {
     font-size: 1.5rem;
     color: var(--primary-color);
 }
-
-/* ============================================
-   CERTIFICATIONS SECTION
-   ============================================ */
 
 .certifications {
     margin-bottom: 100px;
@@ -1339,10 +1312,6 @@ body {
     font-size: 0.9rem;
     margin-bottom: 5px;
 }
-
-/* ============================================
-   CONTACT SECTION
-   ============================================ */
 
 .contact {
     margin-bottom: 80px;
@@ -1441,10 +1410,6 @@ body {
     transform: translateY(-5px) scale(1.1);
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
-
 .footer {
     background: linear-gradient(135deg, var(--text-color) 0%, #1a1a1a 100%);
     color: white;
@@ -1494,10 +1459,6 @@ body {
 .footer-links a:hover {
     color: var(--primary-color);
 }
-
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
 
 @media (max-width: 1024px) {
     .hero {
@@ -1702,42 +1663,52 @@ body {
     }
 }
 
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --text-color: #e0e0e0;
-        --text-light: #a0a0a0;
-        --text-lighter: #707070;
-        --bg-color: #1a1a1a;
-        --bg-light: #2a2a2a;
-        --border-color: #444444;
-    }
-
-    body {
-        background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
-    }
-
-    .navbar {
-        background: rgba(26, 26, 26, 0.95);
-    }
-
-    .about-card,
-    .skill-category,
-    .project-card,
-    .devops-card,
-    .cert-card,
-    .timeline-content,
-    .pipeline-visualization,
-    .pipeline-step,
-    .workflow-diagram,
-    .workflow-stage,
-    .contact-item,
-    .azure-integration {
-        background: #1f1f1f;
-    }
+body.dark-mode {
+    --text-color: #e0e0e0;
+    --text-light: #a0a0a0;
+    --text-lighter: #707070;
+    --bg-color: #1a1a1a;
+    --bg-light: #2a2a2a;
+    --border-color: #444444;
+    background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
 }
 
-/* Accessibility */
+body.dark-mode .navbar {
+    background: rgba(26, 26, 26, 0.95);
+}
+
+body.dark-mode .about-card,
+body.dark-mode .skill-category,
+body.dark-mode .project-card,
+body.dark-mode .devops-card,
+body.dark-mode .cert-card,
+body.dark-mode .timeline-content,
+body.dark-mode .pipeline-visualization,
+body.dark-mode .pipeline-step,
+body.dark-mode .workflow-diagram,
+body.dark-mode .workflow-stage,
+body.dark-mode .contact-item,
+body.dark-mode .azure-integration {
+    background: #1f1f1f;
+}
+
+body.dark-mode .projects-filter {
+    background: linear-gradient(135deg, rgba(3, 102, 214, 0.08), rgba(111, 66, 193, 0.08));
+    border-color: #444444;
+}
+
+body.dark-mode .filter-btn {
+    background: #1f1f1f;
+    border-color: #444444;
+    color: #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .project-card {
+    background: #1a1a1a;
+    border-color: #444444;
+}
+
 .btn:focus,
 .project-link:focus,
 .social-links-contact a:focus {
@@ -1745,7 +1716,6 @@ body {
     outline-offset: 2px;
 }
 
-/* Animation for scroll */
 @media (prefers-reduced-motion: no-preference) {
     .about-card,
     .skill-category,
@@ -1771,10 +1741,6 @@ body {
         transform: translateY(0);
     }
 }
-
-/* ============================================
-   PROJECTS FILTER BUTTONS - PREMIUM STYLING
-   ============================================ */
 
 .projects-filter {
     display: flex;
@@ -1810,7 +1776,6 @@ body {
     gap: 8px;
 }
 
-/* Filter button before pseudo-element for shimmer effect */
 .filter-btn::before {
     content: '';
     position: absolute;
@@ -1844,7 +1809,6 @@ body {
     }
 }
 
-/* Hover state */
 .filter-btn:hover {
     border-color: var(--primary-color);
     color: var(--primary-color);
@@ -1852,7 +1816,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* Active state with gradient */
 .filter-btn.active {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
@@ -1862,7 +1825,6 @@ body {
     position: relative;
 }
 
-/* Active button glow effect */
 .filter-btn.active::after {
     content: '';
     position: absolute;
@@ -1875,7 +1837,6 @@ body {
     pointer-events: none;
 }
 
-/* Filter button icons */
 .filter-btn i {
     font-size: 1rem;
     opacity: 0.8;
@@ -1885,7 +1846,6 @@ body {
     opacity: 1;
 }
 
-/* Responsive for medium screens */
 @media (max-width: 768px) {
     .projects-filter {
         gap: 8px;
@@ -1917,10 +1877,6 @@ body {
         font-size: 0.85rem;
     }
 }
-
-/* ============================================
-   UPDATED PROJECTS GRID
-   ============================================ */
 
 .projects-grid {
     display: grid;
@@ -1979,7 +1935,7 @@ body {
 }
 
 .project-card[data-category="backend"] {
-    border-left: 5px solid #f5576c;
+    border-left: 5px solid #2575fc;
 }
 
 .project-card[data-category="fullstack"] {
@@ -2196,10 +2152,6 @@ body {
     box-shadow: 0 12px 35px rgba(111, 66, 193, 0.4);
 }
 
-/* ============================================
-   LOADING STATE
-   ============================================ */
-
 .loading {
     grid-column: 1 / -1;
     text-align: center;
@@ -2260,10 +2212,6 @@ body {
     color: var(--secondary-color);
     text-decoration: underline;
 }
-
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
 
 @media (max-width: 1024px) {
     .projects-grid {
@@ -2368,30 +2316,6 @@ body {
     }
 }
 
-/* ============================================
-   DARK MODE
-   ============================================ */
-
-@media (prefers-color-scheme: dark) {
-    .projects-filter {
-        background: linear-gradient(135deg, rgba(3, 102, 214, 0.08), rgba(111, 66, 193, 0.08));
-        border-color: #444444;
-    }
-
-    .filter-btn {
-        background: #1f1f1f;
-        border-color: #444444;
-        color: #e0e0e0;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .project-card {
-        background: #1a1a1a;
-        border-color: #444444;
-    }
-}
-
-/* Download Alert Animation */
 @keyframes slideInDown {
     from {
         opacity: 0;
@@ -2419,7 +2343,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* Make download button more interactive */
 .btn[href*="resume"]:hover {
     animation: downloadPulse 0.6s ease-out;
 }
@@ -2434,4 +2357,28 @@ body {
     100% {
         transform: scale(1);
     }
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    margin: 5px 0;
+    transition: var(--transition);
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle:hover {
+    color: var(--primary-color);
 }
