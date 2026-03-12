@@ -49,22 +49,16 @@ cd mallikarjunakadiwal.github.io
 
 ## 📬 Contact & Connect
 
-* 
-**Email:** mallikarjunakadiwal86@gmail.com 
+* **Email:** mallikarjunakadiwal86@gmail.com 
 
 
-* 
-**LinkedIn:** [LinkedIn Profile](https://linkedin.com/in/mallikarjunakadiwal) 
+* **LinkedIn:** [LinkedIn Profile](https://linkedin.com/in/mallikarjunakadiwal) 
 
 
-* 
-**GitHub:** [mallikarjunaKadiwal](https://github.com/mallikarjunaKadiwal) 
+* **GitHub:** [mallikarjunaKadiwal](https://github.com/mallikarjunaKadiwal) 
 
 
-* 
-**LeetCode / HackerRank:** Links available in the portfolio footer.
-
-
+* **LeetCode / HackerRank:** Links available in the portfolio footer.
 
 ---
 
