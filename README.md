@@ -1,4 +1,4 @@
-# Mallikarjuna Kadiwal - Personal Portfolio [cite: 2]
+# Mallikarjuna Kadiwal - Personal Portfolio
 
 A dynamic, fully responsive personal portfolio website showcasing my experience as a Full Stack Developer and DevOps Engineer.
 
