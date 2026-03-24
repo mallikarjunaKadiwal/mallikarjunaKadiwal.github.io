@@ -184,6 +184,8 @@ function setupResumeDownload() {
     
     if (resumeBtn) {
         resumeBtn.addEventListener('click', function(e) {
+            e.preventDefault(); 
+            
             const fileUrl = this.getAttribute('href');
             const fileName = this.getAttribute('download') || 'Mallikarjuna_Kadiwal_Resume.pdf';
             
