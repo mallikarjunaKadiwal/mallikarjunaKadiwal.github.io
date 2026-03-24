@@ -183,32 +183,9 @@ function setupResumeDownload() {
     const resumeBtn = document.querySelector('a[href*="resume"]');
     
     if (resumeBtn) {
-        resumeBtn.addEventListener('click', function(e) {
-            e.preventDefault(); 
+        resumeBtn.addEventListener('click', function() {
             
-            const fileUrl = this.getAttribute('href');
-            const fileName = this.getAttribute('download') || 'Mallikarjuna_Kadiwal_Resume.pdf';
-            
-            fetch(fileUrl, { method: 'HEAD' })
-                .then(response => {
-                    if (response.ok) {
-                        const link = document.createElement('a');
-                        link.href = fileUrl;
-                        link.download = fileName;
-                        link.style.display = 'none';
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                        
-                        showAlert('Resume downloaded successfully! 📄', 'success');
-                    } else {
-                        showAlert('Resume file not found. Please contact admin.', 'error');
-                    }
-                })
-                .catch(error => {
-                    console.error('Download error:', error);
-                    showAlert('Opening resume...', 'info');
-                });
+            showAlert('Resume downloaded successfully! 📄', 'success');
         });
     }
 }
