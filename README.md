@@ -63,4 +63,3 @@ cd mallikarjunakadiwal.github.io
 ---
 
 *Designed and developed by Mallikarjuna Kadiwal.* 
-
